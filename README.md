@@ -25,7 +25,7 @@ Premium static website for O2XYZEN Supergym in Kalyani, built as a single-page l
 - Premium black gym aesthetic inspired by the earlier statue-banner version
 - Correct O2XYZEN logo, statue/Facebook-style background, and offer poster assets
 - Real O2XYZEN photo gallery with lightbox
-- Program, cafeteria, reviews/social proof, pricing, booking, and contact sections
+- Program, cafeteria, restored reviews, "Beyond the Ordinary", pricing, booking, and contact sections
 - WhatsApp CTAs for every plan and generated booking messages
 - SEO metadata and schema.org structured data
 - Responsive mobile navigation and mobile-first layout

@@ -140,7 +140,7 @@
     .desktop-nav{
       display:flex;
       align-items:center;
-      gap:20px;
+      gap:16px;
     }
     .desktop-nav a{
       position:relative;
@@ -809,51 +809,254 @@
       transform:translateY(-1px);
     }
     .reviews{
-      background:#0c0c0c;
+      background:
+        radial-gradient(circle at 14% 18%,rgba(246,200,95,.1),transparent 28%),
+        linear-gradient(180deg,#0c0c0c,#050505);
     }
     .reviews-layout{
       width:min(var(--max),100%);
       margin:0 auto;
       display:grid;
-      grid-template-columns:410px minmax(0,1fr);
-      gap:58px;
+      grid-template-columns:360px minmax(0,1fr);
+      gap:48px;
       align-items:start;
+    }
+    .reviews-copy{
+      position:sticky;
+      top:120px;
+    }
+    .rating-card{
+      margin-top:28px;
+      padding:22px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(135deg,#fff,#d7d1c4);
+      color:#050505;
+    }
+    .rating-card strong{
+      display:block;
+      font-family:"Barlow Condensed",Inter,sans-serif;
+      font-size:3.3rem;
+      line-height:.9;
+      text-transform:uppercase;
+    }
+    .rating-card span{
+      display:block;
+      margin-top:12px;
+      color:#1a1a1a;
+      font-size:.72rem;
+      font-weight:600;
+      letter-spacing:1.4px;
+      text-transform:uppercase;
+    }
+    .rating-card small{
+      display:block;
+      margin-top:8px;
+      color:#4d4942;
+      font-size:.82rem;
+      font-weight:400;
+      line-height:1.55;
+    }
+    .review-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:22px;
     }
     .review-grid{
       display:grid;
+      grid-template-columns:repeat(2,1fr);
       gap:10px;
     }
     .review-card{
-      min-height:166px;
+      min-height:236px;
       padding:24px;
       border:1px solid rgba(255,255,255,.1);
       background:
-        linear-gradient(90deg,rgba(225,25,45,.12),transparent 44%),
+        linear-gradient(135deg,rgba(225,25,45,.13),transparent 42%),
         #090909;
       position:relative;
       overflow:hidden;
+      transition:transform .25s,border-color .25s,background .25s;
     }
-    .review-card b{
-      display:block;
+    .review-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(255,255,255,.24);
+      background:
+        linear-gradient(135deg,rgba(225,25,45,.19),transparent 46%),
+        #111;
+    }
+    .quote-mark{
+      color:rgba(255,255,255,.2);
       font-family:"Barlow Condensed",Inter,sans-serif;
-      font-size:2rem;
-      line-height:1;
-      text-transform:uppercase;
+      font-size:3.4rem;
+      font-weight:800;
+      line-height:.72;
     }
     .review-card p{
-      margin-top:12px;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:.92rem;
+      margin-top:16px;
+      color:#d5cec2;
+      line-height:1.76;
+      font-size:.9rem;
+      font-weight:300;
     }
-    .review-card span{
+    .review-author{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:22px;
+    }
+    .review-avatar{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background:#151515;
+      color:#fff;
+      font-size:.72rem;
+      font-weight:600;
+      letter-spacing:.6px;
+      border-radius:50%;
+      flex:0 0 auto;
+    }
+    .review-author b{
       display:block;
-      margin-top:18px;
+      color:#fff;
+      font-size:.86rem;
+      font-weight:600;
+    }
+    .review-author span{
+      display:block;
+      margin-top:4px;
       color:var(--gold);
-      font-size:.65rem;
+      font-size:.66rem;
       font-weight:500;
-      letter-spacing:1.4px;
+      letter-spacing:1.25px;
       text-transform:uppercase;
+    }
+    .review-note{
+      margin-top:16px;
+      color:var(--dim);
+      font-size:.78rem;
+      font-weight:400;
+      line-height:1.6;
+      text-align:right;
+    }
+    .review-note a{
+      color:var(--muted);
+      text-decoration:underline;
+      text-underline-offset:4px;
+    }
+    .beyond{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 86% 10%,rgba(225,25,45,.16),transparent 28%),
+        linear-gradient(180deg,#050505,#0f0f0f 54%,#050505);
+    }
+    .beyond::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.22;
+      background:
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(0deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:80px 80px;
+      mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);
+    }
+    .beyond-layout{
+      position:relative;
+      z-index:1;
+      width:min(var(--max),100%);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 470px;
+      gap:60px;
+      align-items:center;
+    }
+    .beyond-copy .section-head p{
+      max-width:620px;
+    }
+    .beyond-list{
+      margin-top:36px;
+      border-top:1px solid rgba(255,255,255,.1);
+    }
+    .beyond-item{
+      display:grid;
+      grid-template-columns:54px minmax(0,1fr);
+      gap:18px;
+      padding:22px 0;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .beyond-num{
+      color:var(--gold);
+      font-family:"Barlow Condensed",Inter,sans-serif;
+      font-size:1.18rem;
+      font-weight:700;
+      line-height:1;
+    }
+    .beyond-item h3{
+      color:#fff;
+      font-family:"Barlow Condensed",Inter,sans-serif;
+      font-size:1.7rem;
+      line-height:.95;
+      text-transform:uppercase;
+    }
+    .beyond-item p{
+      margin-top:9px;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:300;
+      line-height:1.72;
+    }
+    .beyond-visual{
+      position:relative;
+      min-height:620px;
+      border:1px solid rgba(255,255,255,.12);
+      overflow:hidden;
+      background:#111;
+      box-shadow:0 32px 100px rgba(0,0,0,.42);
+    }
+    .beyond-visual img{
+      width:100%;
+      height:620px;
+      object-fit:cover;
+      filter:saturate(1.05) contrast(1.1);
+      transition:transform .75s var(--ease);
+    }
+    .beyond-visual:hover img{transform:scale(1.05)}
+    .beyond-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(0deg,rgba(0,0,0,.82),transparent 52%);
+    }
+    .beyond-tag{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      z-index:1;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.72);
+      backdrop-filter:blur(16px);
+    }
+    .beyond-tag strong{
+      display:block;
+      font-family:"Barlow Condensed",Inter,sans-serif;
+      font-size:2.3rem;
+      line-height:.9;
+      text-transform:uppercase;
+    }
+    .beyond-tag span{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.8rem;
+      font-weight:400;
+      line-height:1.55;
     }
     .booking{
       background:
@@ -1125,7 +1328,8 @@
       .desktop-nav,.header-cta{display:none}
       .menu-toggle{display:block}
       .hero{padding:132px 5% 60px}
-      .hero-inner,.about-layout,.cafe-inner,.reviews-layout,.booking-layout,.contact-layout{grid-template-columns:1fr;gap:46px}
+      .hero-inner,.about-layout,.cafe-inner,.reviews-layout,.beyond-layout,.booking-layout,.contact-layout{grid-template-columns:1fr;gap:46px}
+      .reviews-copy{position:static}
       .hero-panel{max-width:420px}
       .gallery-top{display:block}
       .gallery-top p{margin-top:18px}
@@ -1161,6 +1365,9 @@
       .photo.tall,.photo.wide{grid-row:span 1;grid-column:span 1}
       .program-grid,.pricing-grid{grid-template-columns:1fr}
       .offer-poster{max-width:none}
+      .review-grid{grid-template-columns:1fr}
+      .review-note{text-align:left}
+      .beyond-visual,.beyond-visual img{min-height:520px;height:520px}
       .program-card,.program-card:nth-child(2n),.program-card:nth-child(3n){border-right:0}
       .program-card:nth-child(n+5){border-bottom:1px solid rgba(255,255,255,.08)}
       .program-card:last-child{border-bottom:0}
@@ -1233,6 +1440,8 @@
       <a href="#programs">Programs</a>
       <a href="#pricing">Pricing</a>
       <a href="#cafe">Cafe</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#beyond">Why</a>
       <a href="#booking">Booking</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -1248,6 +1457,8 @@
     <a href="#programs">Programs</a>
     <a href="#pricing">Pricing</a>
     <a href="#cafe">Cafe</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#beyond">Why</a>
     <a href="#booking">Booking</a>
     <a href="#contact">Contact</a>
     <a href="https://wa.me/916290881924?text=Hi%20O2XYZEN%20Supergym%2C%20I%20want%20to%20join" target="_blank" rel="noopener">WhatsApp</a>
@@ -1474,31 +1685,119 @@
       <div class="reviews-layout">
         <div class="reviews-copy reveal">
           <div class="section-head">
-            <span>Member Signals</span>
-            <h2>Social proof without fake review scraping.</h2>
-            <p>The redesign highlights real user-facing proof: real photos, open Maps link, Instagram, member training shots, and a direct WhatsApp booking path.</p>
+            <span>Member Reviews</span>
+            <h2>What members say after training here.</h2>
+            <p>Real member voices help new visitors understand the training floor before they walk in. Open the live Maps listing for current public feedback.</p>
           </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="https://maps.app.goo.gl/3WyZy6tLayZwEG99A" target="_blank" rel="noopener">Open Google Maps</a>
-            <a class="btn secondary" href="https://www.instagram.com/o2xyzen_supergym" target="_blank" rel="noopener">Instagram</a>
+          <div class="rating-card">
+            <strong>Highly Rated</strong>
+            <span>&#9733;&#9733;&#9733;&#9733;&#9733; Google Maps signal</span>
+            <small>Direct Maps access stays one tap away so visitors can check the live listing before visiting.</small>
+          </div>
+          <div class="review-actions">
+            <a class="btn primary" href="https://maps.app.goo.gl/3WyZy6tLayZwEG99A" target="_blank" rel="noopener">Open Reviews</a>
+            <a class="btn secondary" href="https://wa.me/916290881924?text=Hi%20O2XYZEN%20Supergym%2C%20I%20saw%20your%20reviews%20and%20want%20to%20visit" target="_blank" rel="noopener">Ask on WhatsApp</a>
           </div>
         </div>
         <div class="review-grid">
           <article class="review-card reveal">
-            <b>Real training culture</b>
-            <p>Member lifting photos, active floor shots, and coach presence make the gym feel lived-in and trustworthy.</p>
-            <span>Proof Point 01</span>
+            <div class="quote-mark">"</div>
+            <p>O2XYZEN is in a completely different league from other gyms in Kalyani. The equipment is top-class and the cafeteria is a brilliant idea. I can eat healthy right after training.</p>
+            <div class="review-author">
+              <div class="review-avatar">RB</div>
+              <div><b>Rajib Biswas</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; Google Maps</span></div>
+            </div>
           </article>
           <article class="review-card reveal">
-            <b>Premium floor visibility</b>
-            <p>Wide interior photos show a large black-and-red strength floor, mirror zones, dumbbell lanes, and platform lifting.</p>
-            <span>Proof Point 02</span>
+            <div class="quote-mark">"</div>
+            <p>Been training here for 3 months. Lost 8 kg and feel amazing. The trainers are knowledgeable and always available. The 24/7 timing is a blessing.</p>
+            <div class="review-author">
+              <div class="review-avatar">SD</div>
+              <div><b>Sanchita Das</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; Google Maps</span></div>
+            </div>
           </article>
           <article class="review-card reveal">
-            <b>Low-friction enquiry</b>
-            <p>Every plan, booking form, Maps card, and header CTA routes users to WhatsApp with the correct message.</p>
-            <span>Proof Point 03</span>
+            <div class="quote-mark">"</div>
+            <p>The gym is huge with proper free weights, Bodyline machines, mirrors everywhere, and a serious premium feel. The protein shakes at the cafe are great too.</p>
+            <div class="review-author">
+              <div class="review-avatar">AK</div>
+              <div><b>Amit Kumar</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; Google Maps</span></div>
+            </div>
           </article>
+          <article class="review-card reveal">
+            <div class="quote-mark">"</div>
+            <p>Gechilam onno gym dekhe, kintu O2XYZEN-er sathe tulona hoy na. Trainer ra helpful, equipment fresh, ar cafeteria ta ekdum unique concept.</p>
+            <div class="review-author">
+              <div class="review-avatar">PR</div>
+              <div><b>Partha Roy</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; Google Maps</span></div>
+            </div>
+          </article>
+          <article class="review-card reveal">
+            <div class="quote-mark">"</div>
+            <p>I joined the 6-month plan and it was worth it. The trainer designed a custom program for me and I have gained serious muscle with consistent guidance.</p>
+            <div class="review-author">
+              <div class="review-avatar">MS</div>
+              <div><b>Mohan Sarkar</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; Google Maps</span></div>
+            </div>
+          </article>
+          <article class="review-card reveal">
+            <div class="quote-mark">"</div>
+            <p>The ambiance is like nothing in this area. Clean floors, strong lighting, and an actual cafe inside a gym. My whole friend group shifted here.</p>
+            <div class="review-author">
+              <div class="review-avatar">TB</div>
+              <div><b>Tanmoy Bose</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; Google Maps</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <p class="review-note reveal">Want to check the latest public feedback? <a href="https://maps.app.goo.gl/3WyZy6tLayZwEG99A" target="_blank" rel="noopener">Open the live Google Maps listing</a>.</p>
+    </section>
+
+    <section class="beyond section-pad" id="beyond">
+      <div class="beyond-layout">
+        <div class="beyond-copy reveal">
+          <div class="section-head">
+            <span>Why O2XYZEN</span>
+            <h2>Beyond the <em>ordinary</em>.</h2>
+            <p>O2XYZEN is built for members who want more than a basic workout room: 24/7 access, cafe-backed recovery culture, a spacious strength floor, and trainer support.</p>
+          </div>
+          <div class="beyond-list">
+            <article class="beyond-item">
+              <div class="beyond-num">01</div>
+              <div>
+                <h3>Always Open 24/7</h3>
+                <p>Train at midnight, early morning, or after work. The schedule adapts to members instead of forcing one fixed routine.</p>
+              </div>
+            </article>
+            <article class="beyond-item">
+              <div class="beyond-num">02</div>
+              <div>
+                <h3>Gym + Cafeteria</h3>
+                <p>Workout, cool down, refuel, and stay around the fitness community without leaving the O2XYZEN environment.</p>
+              </div>
+            </article>
+            <article class="beyond-item">
+              <div class="beyond-num">03</div>
+              <div>
+                <h3>Big Floor Energy</h3>
+                <p>Wide training zones, mirrors, benches, machines, dumbbells, and lifting platforms give members room to train seriously.</p>
+              </div>
+            </article>
+            <article class="beyond-item">
+              <div class="beyond-num">04</div>
+              <div>
+                <h3>Expert Trainer Support</h3>
+                <p>Coaches help with form, routines, plan selection, and beginner confidence so visitors can start without confusion.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="beyond-visual reveal">
+          <img src="./assets/wide-team.jpeg" alt="O2XYZEN members and trainers inside the gym">
+          <div class="beyond-tag">
+            <strong>Kalyani's Finest</strong>
+            <span>Real members, real training atmosphere, and a gym identity built around consistency.</span>
+          </div>
         </div>
       </div>
     </section>
